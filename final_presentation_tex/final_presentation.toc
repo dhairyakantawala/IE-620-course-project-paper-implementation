@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Transition from Proposal to Execution}{3}{0}{1}
+\beamer@sectionintoc {2}{Data Pipeline for Indian Market}{5}{0}{2}
+\beamer@sectionintoc {3}{Model and Training}{8}{0}{3}
+\beamer@sectionintoc {4}{Results and Diagnostics}{13}{0}{4}
+\beamer@sectionintoc {5}{Takeaways}{17}{0}{5}

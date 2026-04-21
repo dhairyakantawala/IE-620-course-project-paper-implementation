@@ -1,0 +1,16 @@
+\frametitle{Sharpe-Oriented Loss}
+\begin{lstlisting}[style=mypython]
+def compute_loss(R_list, H0=0.0):
+    R = torch.stack(R_list)
+    mu = R.mean()
+    sigma = R.std() + 1e-6
+    sharpe = mu / sigma
+    cumulative = torch.cumprod(1 + R, dim=0)
+    peak = torch.cummax(cumulative, dim=0).values
+    drawdown = ((peak - cumulative) / (peak + 1e-8)).max()
+    loss = -0.5 * (sharpe - H0) - 0.5 * mu * 12 + 0.2 * drawdown
+    return loss
+\end{lstlisting}
+\begin{itemize}
+  \item Maintains paper objective while adding practical drawdown regularization.
+\end{itemize}
